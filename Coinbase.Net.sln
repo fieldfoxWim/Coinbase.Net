@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coinbase.Net", "Coinbase.Net\Coinbase.Net.csproj", "{105C17FF-7E45-419A-A845-23AEDAEA5468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coinbase.Net.UnitTests", "Coinbase.Net.UnitTests\Coinbase.Net.UnitTests.csproj", "{BE18D867-48A7-4FCA-BD17-85316FA1CF95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{105C17FF-7E45-419A-A845-23AEDAEA5468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{105C17FF-7E45-419A-A845-23AEDAEA5468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{105C17FF-7E45-419A-A845-23AEDAEA5468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{105C17FF-7E45-419A-A845-23AEDAEA5468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE18D867-48A7-4FCA-BD17-85316FA1CF95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE18D867-48A7-4FCA-BD17-85316FA1CF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE18D867-48A7-4FCA-BD17-85316FA1CF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE18D867-48A7-4FCA-BD17-85316FA1CF95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <LangVersion>11</LangVersion>
+        <Authors>Wim Devos</Authors>
+        <Description>Coinbase.Net is a .Net wrapper for the Gate.io API</Description>
+        <Company>Wim Devos</Company>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <NeutralLanguage>en</NeutralLanguage>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Clients\AccouncementsApi\" />
+      <Folder Include="Clients\DeliveryFuturesApi\" />
+      <Folder Include="Clients\OptionsApi\" />
+      <Folder Include="Clients\PerpetualFuturesApi\" />
+      <Folder Include="Converters\" />
+      <Folder Include="Enums\" />
+      <Folder Include="Icon\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="CryptoExchange.Net" Version="6.1.0" />
+    </ItemGroup>
+
+</Project>
