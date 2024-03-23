@@ -1,8 +1,9 @@
+using Coinbase.Net.Clients.SpotApi;
 using CryptoExchange.Net;
 using CryptoExchange.Net.Authentication;
-using Coinbase.Net.Clients.SpotAndMarginApi;
 using Coinbase.Net.Interfaces.Clients;
 using Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
+using Coinbase.Net.Interfaces.Clients.SpotApi;
 using Coinbase.Net.Objects.Options;
 using Microsoft.Extensions.Logging;
 
@@ -14,7 +15,7 @@ public class CoinbaseRestClient : BaseRestClient, ICoinbaseRestClient
     #region Api clients
 
     /// <inheritdoc />
-    public ICoinbaseRestClientSpotAndMarginApi SpotAndMarginApi { get; }
+    public ICoinbaseRestClientSpotApi SpotApi { get; }
     #endregion
     
     #region constructor/destructor
@@ -47,7 +48,7 @@ public class CoinbaseRestClient : BaseRestClient, ICoinbaseRestClient
             optionsDelegate(options);
         Initialize(options);
 
-        SpotAndMarginApi = AddApiClient(new CoinbaseRestClientSpotAndMarginApi(_logger, httpClient, options));
+        SpotApi = AddApiClient(new CoinbaseRestClientSpotApi(_logger, httpClient, options));
        }
 
     #endregion
@@ -66,6 +67,6 @@ public class CoinbaseRestClient : BaseRestClient, ICoinbaseRestClient
     /// <inheritdoc />
     public void SetApiCredentials(ApiCredentials credentials)
     {
-        SpotAndMarginApi.SetApiCredentials(credentials);
+        SpotApi.SetApiCredentials(credentials);
     }
 }

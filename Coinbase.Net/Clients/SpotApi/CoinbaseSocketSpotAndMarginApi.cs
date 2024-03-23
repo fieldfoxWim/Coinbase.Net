@@ -1,17 +1,17 @@
+using Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
+using Coinbase.Net.Objects.Internal;
+using Coinbase.Net.Objects.Options;
 using CryptoExchange.Net;
 using CryptoExchange.Net.Authentication;
 using CryptoExchange.Net.Objects;
 using CryptoExchange.Net.Sockets;
-using Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
-using Coinbase.Net.Objects.Internal;
-using Coinbase.Net.Objects.Options;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
 
-namespace Coinbase.Net.Clients.SpotAndMarginApi;
+namespace Coinbase.Net.Clients.SpotApi;
 
 /// <inheritdoc />
-public class CoinbaseSocketSpotAndMarginApi : SocketApiClient, ICoinbaseSocketClientSpotAndMarginApi
+public class CoinbaseSocketSpotApi : SocketApiClient, ICoinbaseSocketClientSpotApi
 {
     #region fields
     /// <inheritdoc />
@@ -24,7 +24,7 @@ public class CoinbaseSocketSpotAndMarginApi : SocketApiClient, ICoinbaseSocketCl
     
     public ICoinbaseSocketSpotApiExchangeData ExchangeData { get; }
 
-    internal CoinbaseSocketSpotAndMarginApi(ILogger logger, CoinbaseSocketOptions options) :
+    internal CoinbaseSocketSpotApi(ILogger logger, CoinbaseSocketOptions options) :
         base(logger, options.Environment.SpotAndMarginSocketAddress, options, options.SpotOptions)
     {
         SetDataInterpreter(_ => string.Empty, null);

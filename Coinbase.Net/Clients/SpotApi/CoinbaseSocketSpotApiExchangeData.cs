@@ -5,13 +5,13 @@ using CryptoExchange.Net.Objects;
 using CryptoExchange.Net.Sockets;
 using Microsoft.Extensions.Logging;
 
-namespace Coinbase.Net.Clients.SpotAndMarginApi;
+namespace Coinbase.Net.Clients.SpotApi;
 
 public class CoinbaseSocketSpotApiExchangeData : ICoinbaseSocketSpotApiExchangeData
 {
     private readonly ILogger _logger;
-    private readonly CoinbaseSocketSpotAndMarginApi _client;
-    internal CoinbaseSocketSpotApiExchangeData(ILogger logger, CoinbaseSocketSpotAndMarginApi client)
+    private readonly CoinbaseSocketSpotApi _client;
+    internal CoinbaseSocketSpotApiExchangeData(ILogger logger, CoinbaseSocketSpotApi client)
     {
         _client = client;
         _logger = logger;

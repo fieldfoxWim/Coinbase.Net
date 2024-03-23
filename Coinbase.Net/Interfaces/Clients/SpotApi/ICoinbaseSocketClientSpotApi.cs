@@ -1,6 +1,6 @@
 namespace Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
 
-public interface ICoinbaseSocketClientSpotAndMarginApi
+public interface ICoinbaseSocketClientSpotApi
 {
     /// <summary>
     /// Exchange data streams and queries

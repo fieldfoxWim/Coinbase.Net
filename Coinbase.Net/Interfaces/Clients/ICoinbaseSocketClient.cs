@@ -4,5 +4,5 @@ namespace Coinbase.Net.Interfaces.Clients;
 
 public interface ICoinbaseSocketClient
 {
-    ICoinbaseSocketClientSpotAndMarginApi SpotAndMarginApi { get; set; }
+    ICoinbaseSocketClientSpotApi SpotApi { get; set; }
 }

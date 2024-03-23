@@ -1,4 +1,4 @@
-using Coinbase.Net.Clients.SpotAndMarginApi;
+using Coinbase.Net.Clients.SpotApi;
 using CryptoExchange.Net;
 using CryptoExchange.Net.Authentication;
 using Coinbase.Net.Interfaces.Clients;
@@ -14,7 +14,7 @@ public class CoinbaseSocketClient : BaseSocketClient, ICoinbaseSocketClient
     #region Api clients
 
     /// <inheritdoc />
-    public ICoinbaseSocketClientSpotAndMarginApi SpotAndMarginApi { get; set; }
+    public ICoinbaseSocketClientSpotApi SpotApi { get; set; }
     
     #endregion
     
@@ -50,7 +50,7 @@ public class CoinbaseSocketClient : BaseSocketClient, ICoinbaseSocketClient
         optionsDelegate(options);
         Initialize(options);
 
-        SpotAndMarginApi = AddApiClient(new CoinbaseSocketSpotAndMarginApi(_logger, options));
+        SpotApi = AddApiClient(new CoinbaseSocketSpotApi(_logger, options));
     }
     #endregion
     

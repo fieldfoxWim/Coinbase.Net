@@ -1,17 +1,15 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=07f93de2_002Daa7f_002D4961_002D9f8a_002D8205e0a51ef5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="BatchTickerTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.BatchTickerTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=70b85354_002D6940_002D4a20_002D955d_002Dd27b222aa685/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
+  &lt;Assembly Path="/Users/wimdevos/.nuget/packages/cryptoexchange.net/6.1.0/lib/netstandard2.0/CryptoExchange.Net.dll" /&gt;
+&lt;/AssemblyExplorer&gt;</s:String>
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=70b85354_002D6940_002D4a20_002D955d_002Dd27b222aa685/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
     &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.CurrencyTest&lt;/TestId&gt;
     &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.CurrenciesTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.GetOpenOrdersTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e839bbb3_002D3ba8_002D4f75_002D93c9_002D05b05ee9ef49/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CurrencyTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest&lt;/TestId&gt;
-  &lt;/TestAncestor&gt;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+	
+	</wpf:ResourceDictionary>
