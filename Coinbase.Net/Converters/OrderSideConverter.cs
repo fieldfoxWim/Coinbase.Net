@@ -10,8 +10,8 @@ namespace Coinbase.Net.Converters
 
         protected override List<KeyValuePair<OrderSide, string>> Mapping => new()
         {
-            new KeyValuePair<OrderSide, string>(OrderSide.Buy, "BUY"),
-            new KeyValuePair<OrderSide, string>(OrderSide.Sell, "SELL")
+            new KeyValuePair<OrderSide, string>(OrderSide.Buy, "buy"),
+            new KeyValuePair<OrderSide, string>(OrderSide.Sell, "sell")
         };
     }
 }
