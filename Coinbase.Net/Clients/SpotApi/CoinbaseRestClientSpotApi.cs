@@ -27,7 +27,8 @@ public class CoinbaseRestClientSpotApi : RestApiClient, ICoinbaseRestClientSpotA
     /// <inheritdoc />
     public ICoinbaseRestClientSpotApiExchangeData ExchangeData { get; }
     public ICoinbaseRestClientSpotApiTrading Trading { get; }
-    
+    public ICoinbaseRestClientSpotApiAccount Account { get; }
+
     public string ExchangeName => "Coinbase";
     #endregion
     
@@ -36,6 +37,7 @@ public class CoinbaseRestClientSpotApi : RestApiClient, ICoinbaseRestClientSpotA
     {
         ExchangeData = new CoinbaseRestClientSpotApiExchangeData(logger, this);
         Trading = new CoinbaseRestClientSpotApiTrading(logger, this);
+        Account = new CoinbaseRestClientSpotApiAccount(logger, this);
     }
     
     internal Uri GetUrl(string endpoint)
@@ -102,9 +104,19 @@ public class CoinbaseRestClientSpotApi : RestApiClient, ICoinbaseRestClientSpotA
         throw new NotImplementedException();
     }
 
-    public Task<WebCallResult<IEnumerable<Balance>>> GetBalancesAsync(string? accountId = null, CancellationToken ct = new CancellationToken())
+    public async Task<WebCallResult<IEnumerable<Balance>>> GetBalancesAsync(string? accountId = null, CancellationToken ct = new CancellationToken())
     {
-        throw new NotImplementedException();
+        var wallets = await Account.GetAccountInfoAsync(ct: ct).ConfigureAwait(false);
+        if (!wallets)
+            return wallets.As<IEnumerable<Balance>>(null);
+
+        return wallets.As(wallets.Data.Select(t => new Balance
+        {
+            SourceObject = t,
+            Asset = t.Currency,
+            Available = Convert.ToDecimal(t.AvailableOnConsumer, CultureInfo.InvariantCulture),
+            Total = Convert.ToDecimal(t.Balance, CultureInfo.InvariantCulture),
+        }));
     }
 
     public async Task<WebCallResult<Order>> GetOrderAsync(string orderId, string? symbol = null, CancellationToken ct = new CancellationToken())

@@ -14,8 +14,8 @@ public class CoinbaseRestClientSpotApiTrading : ICoinbaseRestClientSpotApiTradin
     // Orders
     private const string Orders = "orders";
     private const string Fills = "fills";
-    private const string SingleOrder = "order/{0}?market_type=spot";
-    private const string Order = "orders/{0}";
+    private const string SingleOrder = "orders/{0}?market_type=spot";
+    private const string Order = "orders/{0}?product_id={1}";
     
     private readonly CoinbaseRestClientSpotApi _baseClient;
     private readonly ILogger _logger;
@@ -123,7 +123,8 @@ public class CoinbaseRestClientSpotApiTrading : ICoinbaseRestClientSpotApiTradin
     
     public async Task<WebCallResult<string>> CancelOrderAsync(string orderId, CancellationToken ct)
     {
-        return await _baseClient.SendRequestInternal<string>(_baseClient.GetUrl(string.Format(Order, orderId)), 
+        
+        return await _baseClient.SendRequestInternal<string>(_baseClient.GetUrl(string.Format(Order, orderId, "USDT-EUR")), 
             HttpMethod.Delete, ct, signed: true).ConfigureAwait(false);
     }
 }
