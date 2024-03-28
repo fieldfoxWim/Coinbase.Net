@@ -114,7 +114,7 @@ public class CoinbaseRestClientSpotApi : RestApiClient, ICoinbaseRestClientSpotA
         {
             SourceObject = t,
             Asset = t.Currency,
-            Available = Convert.ToDecimal(t.AvailableOnConsumer, CultureInfo.InvariantCulture),
+            Available = Convert.ToDecimal(t.Available, CultureInfo.InvariantCulture),
             Total = Convert.ToDecimal(t.Balance, CultureInfo.InvariantCulture),
         }));
     }

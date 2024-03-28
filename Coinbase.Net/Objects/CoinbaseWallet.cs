@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace Coinbase.Net.Clients.SpotApi;
+namespace Coinbase.Net.Objects;
 
 public class CoinbaseWallet
 {

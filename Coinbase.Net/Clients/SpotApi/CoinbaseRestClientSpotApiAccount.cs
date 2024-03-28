@@ -1,4 +1,5 @@
 using Coinbase.Net.Interfaces.Clients.SpotApi;
+using Coinbase.Net.Objects;
 using CryptoExchange.Net.Objects;
 using Microsoft.Extensions.Logging;
 
@@ -6,7 +7,8 @@ namespace Coinbase.Net.Clients.SpotApi;
 
 public class CoinbaseRestClientSpotApiAccount : ICoinbaseRestClientSpotApiAccount
 {
-    private const string AccountInfo = "coinbase-accounts";
+    private const string Wallets = "coinbase-accounts";
+    private const string Account = "accounts";
     
     private readonly ILogger _logger;
     private readonly CoinbaseRestClientSpotApi _baseClient;
@@ -16,10 +18,17 @@ public class CoinbaseRestClientSpotApiAccount : ICoinbaseRestClientSpotApiAccoun
         _baseClient = baseClient;
     }
     
-    public async Task<WebCallResult<IEnumerable<CoinbaseWallet>>> GetAccountInfoAsync(CancellationToken ct)
+    public async Task<WebCallResult<IEnumerable<CoinbaseWallet>>> GetWalletsAsync(CancellationToken ct)
     {
         return await _baseClient.SendRequestInternal<IEnumerable<CoinbaseWallet>>(
-            _baseClient.GetUrl(AccountInfo),  
+            _baseClient.GetUrl(Wallets),  
+            HttpMethod.Get, signed: true, cancellationToken: ct).ConfigureAwait(false);
+    }
+    
+    public async Task<WebCallResult<IEnumerable<CoinbaseAccount>>> GetAccountInfoAsync(CancellationToken ct)
+    {
+        return await _baseClient.SendRequestInternal<IEnumerable<CoinbaseAccount>>(
+            _baseClient.GetUrl(Account),  
             HttpMethod.Get, signed: true, cancellationToken: ct).ConfigureAwait(false);
     }
 }
