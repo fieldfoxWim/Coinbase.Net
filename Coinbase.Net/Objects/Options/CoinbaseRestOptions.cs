@@ -1,5 +1,3 @@
-using CryptoExchange.Net.Interfaces;
-using CryptoExchange.Net.Objects;
 using CryptoExchange.Net.Objects.Options;
 
 namespace Coinbase.Net.Objects.Options;
@@ -20,13 +18,13 @@ public class CoinbaseRestOptions : RestExchangeOptions<CoinbaseEnvironment>
     /// </summary>
     public CoinbaseRestApiOptions SpotAndMarginOptions { get; private set; } = new CoinbaseRestApiOptions
     {
-        RateLimiters = new List<IRateLimiter>
-        {
-            new RateLimiter()
-                .AddPartialEndpointLimit("/", 200, TimeSpan.FromSeconds(10))
-                //.AddPartialEndpointLimit("/sapi/", 180000, TimeSpan.FromMinutes(1))
-                //.AddEndpointLimit("/api/v3/order", 50, TimeSpan.FromSeconds(10), HttpMethod.Post, true)
-        }
+        // RateLimiters = new List<IRateLimiter>
+        // {
+        //     new RateLimiter()
+        //         .AddPartialEndpointLimit("/", 200, TimeSpan.FromSeconds(10))
+        //         //.AddPartialEndpointLimit("/sapi/", 180000, TimeSpan.FromMinutes(1))
+        //         //.AddEndpointLimit("/api/v3/order", 50, TimeSpan.FromSeconds(10), HttpMethod.Post, true)
+        // }
     };
     
     internal CoinbaseRestOptions Copy()

@@ -2,6 +2,7 @@ using Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
 using Coinbase.Net.Objects.Models.Spot;
 using CryptoExchange.Net;
 using CryptoExchange.Net.Objects;
+using CryptoExchange.Net.Objects.Sockets;
 using CryptoExchange.Net.Sockets;
 using Microsoft.Extensions.Logging;
 
@@ -32,7 +33,7 @@ public class CoinbaseSocketSpotApiExchangeData : ICoinbaseSocketSpotApiExchangeD
         var handler = new Action<DataEvent<CoinbaseTick>>(data => 
             onMessage(data.As(data.Data, data.Data.ProductId)));
         
-        return await _client.SubscribeAsync(
+        return await _client.SubscribeAsync( // Ticker
                 _client.BaseAddress, "ticker", symbols, handler, ct)
             .ConfigureAwait(false);
     }
@@ -51,5 +52,6 @@ public class CoinbaseSocketSpotApiExchangeData : ICoinbaseSocketSpotApiExchangeD
         return await _client.SubscribeAsync(
                 _client.BaseAddress, "ticker_batch", symbols, handler, ct)
             .ConfigureAwait(false);
+        
     }
 }

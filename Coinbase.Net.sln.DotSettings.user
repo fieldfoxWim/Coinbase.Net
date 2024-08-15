@@ -1,15 +1,46 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Fwimdevos_002FSource_002FFieldFox_002FCryptoExchange_002ENet_002FCryptoExchange_002ENet_002Fbin_002FDebug_002Fnetstandard2_002E0_002FCryptoExchange_002ENet_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
   &lt;Assembly Path="/Users/wimdevos/.nuget/packages/cryptoexchange.net/6.1.0/lib/netstandard2.0/CryptoExchange.Net.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String>
-	
-	
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=70b85354_002D6940_002D4a20_002D955d_002Dd27b222aa685/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=35eae795_002Dcbca_002D4b5b_002D8f36_002D279fc43c2d83/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TickerTest #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
   &lt;TestAncestor&gt;
-    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.CurrencyTest&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.CurrenciesTest&lt;/TestId&gt;
-    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.GetOpenOrdersTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.TickerTest&lt;/TestId&gt;
   &lt;/TestAncestor&gt;
 &lt;/SessionState&gt;</s:String>
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=70675ac5_002D16d8_002D4e0f_002Db84b_002Db1a360c4ef1f/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TickerTest #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.TickerTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.BatchTickerTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.GetSymbolsTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.GetBalanceTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c26385fc_002D1803_002D4a19_002Dad2c_002D2b1d510ed9ad/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TickerTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.TickerTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c2cf5482_002Dc205_002D4b5b_002D8424_002D711eeb241ed4/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TickerTest #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.TickerTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e38b2760_002D6a4a_002D4511_002Db1d7_002Dce6702ae95b2/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TickerTest #4" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.TickerTest&lt;/TestId&gt;
+    &lt;TestId&gt;NUnit3x::BE18D867-48A7-4FCA-BD17-85316FA1CF95::net7.0::Coinbase.Net.UnitTests.IntegrationTest.GetBalanceTest&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	</wpf:ResourceDictionary>

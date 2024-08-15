@@ -1,5 +1,5 @@
 ﻿using Coinbase.Net.Enums;
-using CryptoExchange.Net.Converters;
+using CryptoExchange.Net.Converters.JsonNet;
 
 namespace Coinbase.Net.Converters
 {

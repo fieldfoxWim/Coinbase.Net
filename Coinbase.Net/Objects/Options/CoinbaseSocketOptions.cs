@@ -1,5 +1,3 @@
-using CryptoExchange.Net.Interfaces;
-using CryptoExchange.Net.Objects;
 using CryptoExchange.Net.Objects.Options;
 
 namespace Coinbase.Net.Objects.Options;
@@ -20,12 +18,12 @@ public class CoinbaseSocketOptions : SocketExchangeOptions<CoinbaseEnvironment>
     /// </summary>
     public CoinbaseSocketApiOptions SpotOptions { get; private set; } = new()
     {
-        RateLimiters = new List<IRateLimiter>
-        {
-            new RateLimiter()
-                .AddTotalRateLimit(20, TimeSpan.FromSeconds(1))
-                .AddConnectionRateLimit("wss://ws-feed.exchange.coinbase.com", 5, TimeSpan.FromSeconds(1))
-        }
+        // RateLimiters = new List<IRateLimiter>
+        // {
+        //     new RateLimiter()
+        //         .AddTotalRateLimit(20, TimeSpan.FromSeconds(1))
+        //         .AddConnectionRateLimit("wss://ws-feed.exchange.coinbase.com", 5, TimeSpan.FromSeconds(1))
+        // }
     };
     
     internal CoinbaseSocketOptions Copy()

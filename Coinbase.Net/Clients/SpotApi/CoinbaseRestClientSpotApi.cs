@@ -1,14 +1,14 @@
 using System.Globalization;
 using Coinbase.Net.Enums;
-using Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
 using Coinbase.Net.Interfaces.Clients.SpotApi;
-using Coinbase.Net.Objects;
 using Coinbase.Net.Objects.Options;
 using CryptoExchange.Net;
 using CryptoExchange.Net.Authentication;
+using CryptoExchange.Net.Clients;
 using CryptoExchange.Net.CommonObjects;
 using CryptoExchange.Net.Interfaces.CommonClients;
 using CryptoExchange.Net.Objects;
+using CryptoExchange.Net.RateLimiting.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace Coinbase.Net.Clients.SpotApi;
@@ -47,6 +47,11 @@ public class CoinbaseRestClientSpotApi : RestApiClient, ICoinbaseRestClientSpotA
 
     protected override AuthenticationProvider CreateAuthenticationProvider(ApiCredentials credentials)
         => new CoinbaseAuthenticationProvider((CoinbaseApiCredentials)credentials);
+
+    public override string FormatSymbol(string baseAsset, string quoteAsset)
+    {
+        throw new NotImplementedException();
+    }
 
     public override TimeSyncInfo GetTimeSyncInfo() => null;
 
@@ -268,17 +273,17 @@ public class CoinbaseRestClientSpotApi : RestApiClient, ICoinbaseRestClientSpotA
     
     internal async Task<WebCallResult<T>> SendRequestInternal<T>(Uri uri, HttpMethod method, CancellationToken cancellationToken,
         Dictionary<string, object>? parameters = null, bool signed = false, HttpMethodParameterPosition? postPosition = null,
-        ArrayParametersSerialization? arraySerialization = null, int weight = 1, bool ignoreRateLimit = false) where T : class
+        ArrayParametersSerialization? arraySerialization = null, int weight = 0, IRateLimitGate? gate = null) where T : class
     {
         var result = await SendRequestAsync<T>(uri, 
             method, cancellationToken, parameters, signed, 
-            postPosition, arraySerialization, weight, 
+            RequestBodyFormat.Json, postPosition, arraySerialization, weight, 
             additionalHeaders: new Dictionary<string, string>
             {
                 //{"Content-Type", "application/json"}, 
                 { "User-Agent", Guid.NewGuid().ToString() }
-            },
-            ignoreRatelimit: ignoreRateLimit).ConfigureAwait(false);
+            }, 
+            gate: gate).ConfigureAwait(false);
         return result;                    
     }
 }

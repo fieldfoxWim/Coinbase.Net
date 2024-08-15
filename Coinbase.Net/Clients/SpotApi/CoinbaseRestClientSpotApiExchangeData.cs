@@ -57,6 +57,6 @@ public class CoinbaseRestClientSpotApiExchangeData : ICoinbaseRestClientSpotApiE
     {
         symbol.ValidateCoinbaseSymbol();
 
-        return await _baseClient.SendRequestInternal<CoinbaseProductTick>(_baseClient.GetUrl(string.Format(Ticker,symbol)), HttpMethod.Get, ct, weight: 1).ConfigureAwait(false);
+        return await _baseClient.SendRequestInternal<CoinbaseProductTick>(_baseClient.GetUrl(string.Format(Ticker,symbol)), HttpMethod.Get, ct).ConfigureAwait(false);
     }
 }

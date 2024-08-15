@@ -4,6 +4,7 @@ using CryptoExchange.Net.Authentication;
 using Coinbase.Net.Interfaces.Clients;
 using Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
 using Coinbase.Net.Objects.Options;
+using CryptoExchange.Net.Clients;
 using Microsoft.Extensions.Logging;
 
 namespace Coinbase.Net.Clients;

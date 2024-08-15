@@ -1,6 +1,6 @@
 using Coinbase.Net.Objects.Models.Spot;
 using CryptoExchange.Net.Objects;
-using CryptoExchange.Net.Sockets;
+using CryptoExchange.Net.Objects.Sockets;
 
 namespace Coinbase.Net.Interfaces.Clients.SpotAndMarginApi;
 

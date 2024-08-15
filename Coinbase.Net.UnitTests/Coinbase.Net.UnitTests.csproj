@@ -18,4 +18,10 @@
       <ProjectReference Include="..\Coinbase.Net\Coinbase.Net.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="CryptoExchange.Net">
+        <HintPath>..\..\..\FieldFox\CryptoExchange.Net\CryptoExchange.Net\bin\Debug\netstandard2.0\CryptoExchange.Net.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
 </Project>
