@@ -113,7 +113,7 @@ public class CoinbaseRestClientSpotApiTrading : ICoinbaseRestClientSpotApiTradin
         }
 
         return await _baseClient.SendRequestInternal<CoinbaseOrder>(_baseClient.GetUrl(Orders), 
-            HttpMethod.Post, ct, parameters, signed: true).ConfigureAwait(false);
+            HttpMethod.Post, ct, parameters, postPosition:HttpMethodParameterPosition.InBody, signed: true).ConfigureAwait(false);
     }
     
     public async Task<WebCallResult<CoinbaseOrder>> GetSingleOrderAsync(string orderId, CancellationToken ct)

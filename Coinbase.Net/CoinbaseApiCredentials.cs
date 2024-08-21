@@ -7,36 +7,25 @@ namespace Coinbase.Net;
 public class CoinbaseApiCredentials : ApiCredentials
 {
     /// <summary>The passphrase to authenticate requests</summary>
-    public SecureString? Passphrase { get; }
+    public string? Passphrase { get; }
     
-    public CoinbaseApiCredentials(SecureString key, SecureString secret, SecureString passphrase) : base(key, secret)
-    {
-        Passphrase = passphrase;
-    }
-
-    public CoinbaseApiCredentials(SecureString key, SecureString secret, SecureString? passphrase, ApiCredentialsType credentialsType) : base(key, secret, credentialsType)
-    {
-        Passphrase = passphrase;
-    }
-
     public CoinbaseApiCredentials(string key, string secret, string passphrase) : base(key, secret)
     {
-        Passphrase = passphrase.ToSecureString();
+        Passphrase = passphrase;
     }
 
-    public CoinbaseApiCredentials(string key, string secret,  string passphrase, ApiCredentialsType credentialsType) 
-        : base(key, secret, credentialsType)
+    public CoinbaseApiCredentials(string key, string secret, string? passphrase, ApiCredentialsType credentialsType) : base(key, secret, credentialsType)
     {
-        Passphrase = passphrase.ToSecureString();;
+        Passphrase = passphrase;
     }
 
     public CoinbaseApiCredentials(Stream inputStream, string? passphrase, string? identifierKey = null, string? identifierSecret = null) : base(inputStream, identifierKey, identifierSecret)
     {
-        Passphrase = (passphrase ?? string.Empty).ToSecureString();
+        Passphrase = passphrase ?? string.Empty;
     }
 
     public override ApiCredentials Copy()
     {
-        return new CoinbaseApiCredentials(Key.GetString(), Secret.GetString(), Passphrase.GetString(), this.CredentialType);
+        return new CoinbaseApiCredentials(Key, Secret, Passphrase, CredentialType);
     }
 }

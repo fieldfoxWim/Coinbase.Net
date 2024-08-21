@@ -33,7 +33,7 @@
 <!--        <HintPath>..\..\..\FieldFox\CryptoExchange.Net\CryptoExchange.Net\bin\Debug\netstandard2.0\CryptoExchange.Net.dll</HintPath>-->
 <!--      </Reference>-->
     
-      <PackageReference Include="CryptoExchange.Net" Version="7.10.0" />
+      <PackageReference Include="CryptoExchange.Net" Version="7.11.0" />
     </ItemGroup>
 
     <ItemGroup>

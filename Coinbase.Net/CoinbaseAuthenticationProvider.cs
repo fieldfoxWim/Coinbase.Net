@@ -17,8 +17,8 @@ public class CoinbaseAuthenticationProvider : AuthenticationProvider
         _credentials = credentials;
     }
     
-    public override void AuthenticateRequest(RestApiClient apiClient, Uri uri, HttpMethod method, IDictionary<string, object> uriParameters,
-        IDictionary<string, object> bodyParameters, Dictionary<string, string> headers, bool auth, ArrayParametersSerialization arraySerialization,
+    public override void AuthenticateRequest(RestApiClient apiClient, Uri uri, HttpMethod method, ref IDictionary<string, object>? uriParameters,
+        ref IDictionary<string, object>? bodyParameters, ref Dictionary<string, string>? headers, bool auth, ArrayParametersSerialization arraySerialization,
         HttpMethodParameterPosition parameterPosition, RequestBodyFormat requestBodyFormat)
     {
         uriParameters = parameterPosition == HttpMethodParameterPosition.InUri ? new SortedDictionary<string, object>(uriParameters) : new SortedDictionary<string, object>();
@@ -32,15 +32,15 @@ public class CoinbaseAuthenticationProvider : AuthenticationProvider
         var body = bodyParameters.Any() ? JsonConvert.SerializeObject(bodyParameters) : string.Empty;
         var data = $"{timestamp}{method.ToString().ToUpper()}{uri.PathAndQuery}{body}";
         
-        headers.Add("CB-ACCESS-KEY", _credentials.Key.GetString());
+        headers.Add("CB-ACCESS-KEY", _credentials.Key);
         headers.Add("CB-ACCESS-SIGN", GetSignHmacsha256(data));
         headers.Add("CB-ACCESS-TIMESTAMP", timestamp.ToString());
-        headers.Add("CB-ACCESS-PASSPHRASE",_credentials.Passphrase.GetString());
+        headers.Add("CB-ACCESS-PASSPHRASE",_credentials.Passphrase!);
     }
 
     private string GetSignHmacsha256(string data)
     {
-        using var hmacshA256 = new HMACSHA256(Convert.FromBase64String(_credentials.Secret.GetString()));
+        using var hmacshA256 = new HMACSHA256(Convert.FromBase64String(_credentials.Secret));
         var hash = hmacshA256.ComputeHash(Encoding.UTF8.GetBytes(data));
         return BytesToBase64String(hash);
     }
