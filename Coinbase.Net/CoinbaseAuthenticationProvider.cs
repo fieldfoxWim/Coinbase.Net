@@ -21,15 +21,13 @@ public class CoinbaseAuthenticationProvider : AuthenticationProvider
         ref IDictionary<string, object>? bodyParameters, ref Dictionary<string, string>? headers, bool auth, ArrayParametersSerialization arraySerialization,
         HttpMethodParameterPosition parameterPosition, RequestBodyFormat requestBodyFormat)
     {
-        uriParameters = parameterPosition == HttpMethodParameterPosition.InUri ? new SortedDictionary<string, object>(uriParameters) : new SortedDictionary<string, object>();
-        bodyParameters = parameterPosition == HttpMethodParameterPosition.InBody ? new SortedDictionary<string, object>(uriParameters) : new SortedDictionary<string, object>();
         headers = new Dictionary<string, string>();
         
         if (!auth)
             return;
         
         var timestamp = DateTimeOffset.Now.ToUnixTimeSeconds() ; // Convert.ToUInt64(GetTimestamp(apiClient).Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
-        var body = bodyParameters.Any() ? JsonConvert.SerializeObject(bodyParameters) : string.Empty;
+        var body = bodyParameters != null ? bodyParameters.Any() ? JsonConvert.SerializeObject(bodyParameters) : string.Empty : string.Empty;
         var data = $"{timestamp}{method.ToString().ToUpper()}{uri.PathAndQuery}{body}";
         
         headers.Add("CB-ACCESS-KEY", _credentials.Key);
@@ -44,6 +42,5 @@ public class CoinbaseAuthenticationProvider : AuthenticationProvider
         var hash = hmacshA256.ComputeHash(Encoding.UTF8.GetBytes(data));
         return BytesToBase64String(hash);
     }
-
-   
+    
 }
