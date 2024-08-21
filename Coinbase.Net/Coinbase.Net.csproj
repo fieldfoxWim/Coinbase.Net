@@ -16,34 +16,37 @@
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <DebugType>full</DebugType>
+        <DebugType>full</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Clients\AccouncementsApi\" />
-      <Folder Include="Clients\DeliveryFuturesApi\" />
-      <Folder Include="Clients\OptionsApi\" />
-      <Folder Include="Clients\PerpetualFuturesApi\" />
-      <Folder Include="Icon\" />
+        <Folder Include="Clients\AccouncementsApi\"/>
+        <Folder Include="Clients\DeliveryFuturesApi\"/>
+        <Folder Include="Clients\OptionsApi\"/>
+        <Folder Include="Clients\PerpetualFuturesApi\"/>
+        <Folder Include="Icon\"/>
     </ItemGroup>
 
     <ItemGroup><!--      <PackageReference Include="CryptoExchange.Net" Version="7.6.0" />-->
-    
-<!--      <Reference Include="CryptoExchange.Net">-->
-<!--        <HintPath>..\..\..\FieldFox\CryptoExchange.Net\CryptoExchange.Net\bin\Debug\netstandard2.0\CryptoExchange.Net.dll</HintPath>-->
-<!--      </Reference>-->
-    
-      <PackageReference Include="CryptoExchange.Net" Version="7.11.0" />
+
+<!--        <Reference Include="CryptoExchange.Net">-->
+<!--            <HintPath>..\..\..\FieldFox\CryptoExchange.Net\CryptoExchange.Net\bin\Debug\netstandard2.0\CryptoExchange.Net.dll</HintPath>-->
+<!--        </Reference>-->
+<!--        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0"/>-->
+<!--        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>-->
+
+              <PackageReference Include="CryptoExchange.Net" Version="7.11.0" />
     </ItemGroup>
 
-    <ItemGroup>
-<!--      <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />-->
-<!--      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />-->
-<!--      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />-->
-<!--      <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />-->
-<!--      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />-->
-<!--      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />-->
-<!--      <PackageReference Include="System.Net.Http" Version="4.3.4" />-->
+    <ItemGroup><!--      <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />-->
+        <!--      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />-->
+        <!--      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />-->
+        <!--      <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />-->
+        <!--      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />-->
+        <!--      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />-->
+        <!--      <PackageReference Include="System.Net.Http" Version="4.3.4" />-->
+
+
     </ItemGroup>
 
 </Project>
